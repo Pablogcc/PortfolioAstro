@@ -1,0 +1,37 @@
+---
+const posts = await Astro.glob('../pages/posts/*.md');
+--- 
+
+<div class="relative w-full posts-container">
+  {posts.slice(0, 4).map((post, index) => (
+    <section
+      class={`sticky top-0 h-screen flex flex-col justify-center px-8 sm:px-16 md:px-32 ${
+        index % 2 === 0 ? 'bg-[#333333]' : 'bg-[#726B6B]'
+      }`}
+    >
+      <h2 class={`mt-10 text-2xl text-center sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 md:mb-10 ${
+        index % 2 === 0 ? 'text-[#B6AEAE]' : 'text-[#000000]'
+      }`}>
+        {post.frontmatter.title}
+      </h2>
+
+      <div
+        class={`flex flex-col sm:flex-row justify-between items-center w-full ${
+          index % 2 === 0 ? 'sm:flex-row' : 'sm:flex-row-reverse'
+        }`}
+      >
+        <img
+          src={post.frontmatter.image}
+          alt={post.frontmatter.title}
+          class="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-[500px] lg:h-80 object-cover rounded-lg shadow-lg mb-6 sm:mb-0"
+        />
+        
+        <p class={`text-base sm:text-lg md:text-xl max-w-full sm:max-w-2xl md:max-w-2xl leading-relaxed ${
+          index % 2 === 0 ? 'text-[#B6AEAE]' : 'text-[#000000]'
+        }`}>
+          {post.frontmatter.description}
+        </p>
+      </div>
+    </section>
+  ))}
+</div>

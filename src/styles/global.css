@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+/* 🌞 Modo Claro */
+
+
+/* Header */
+.light header {
+    background-color: #7b5959;
+    color: #000000;
+}
+
+/* Footer */
+.light footer {
+    background-color: #7b5959;
+    color: #000000;
+}
+
+/* About */
+
+.light .about {
+  background-color: #986f6f;
+}
+
+.light section {
+    background-color: #986f6f;
+    color: #121212;
+}
+
+.light section div {
+    background-color: #986f6f;
+    color: #121212;
+}
+
+.light .containerr {
+  background-color: #726565;
+  color: #121212;
+}
+
+/* Cards */
+.light .divclass {
+    background-color: #5b4747;
+    color: #121212;
+}
+
+/* Contactos y formularios */
+.light .fondoContacto {
+  background-color: #ab8a8a;
+}
+
+.light .formulario {
+    background-color: #ccadad;
+    color: #121212;
+}
+
+.light .formulario input,
+.light .formulario textarea {
+    background-color: #ffffff;
+    border-color: #ad7d7d;
+    color: #121212;
+}
+
+/* Proyecto empresa*/
+
+.light .proyecto {
+    background-color: #986f6f;
+    color: #121212;
+}
+
+/* Tecnologías */
+
+.light .tecnologias {
+    background-color: #986f6f;
+    color: #121212;
+}
+
+.light .trabajo1{
+  background-color: #000000;
+}
+
+/*Posts*/
+
+.light .posts-container section {
+  background-color: #552f2f;
+}
+
+.light .posts-container section:nth-child(odd) {
+  background-color: #995e5e;
+}
+
+.light .posts-container h2 {
+  color: #121212;
+}
+
+.light .posts-container p {
+  color: #000000;
+  background-color: transparent;
+}
+
+.light .posts-container div {
+  background-color: inherit; 
+}
+

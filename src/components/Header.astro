@@ -1,0 +1,20 @@
+<header class="flex justify-between items-center p-4 bg-[#121212] text-gray-400 transition-all duration-300">
+  <div class="text-xl font-semibold">Pablo García Celdrán</div>
+  <nav class="flex items-center space-x-6">
+    <a href="/contactos" class="hover:text-gray-100">Contact</a>
+    <a href="/" class="hover:text-gray-100">Start</a>
+
+    <div class="relative w-[60px] h-[26px]">
+      <input type="checkbox" id="theme-toggle" class="sr-only peer" />
+      <label for="theme-toggle"
+        class="block w-full h-full bg-[#d8dbe0] border-4 border-[#d8dbe0] rounded-full cursor-pointer peer-checked:bg-[#28292c] transition-all">
+      </label>
+      <div
+        class="absolute top-[5px] left-[5px] w-[15px] h-[15px] rounded-full transition-all peer-checked:translate-x-[30px]"
+        id="toggle-icon">
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script src="../scripts/themeToggle.js"></script> 
