@@ -1,20 +1,12 @@
-<header class="flex justify-between items-center p-4 bg-[#121212] text-gray-400 transition-all duration-300">
-  <div class="text-xl font-semibold">Pablo García Celdrán</div>
+<header class="flex justify-between items-center p-4 bg-[#121212] text-gray-400 transition-all duration-300 dark:bg-[#2d2d2d] dark:text-gray-200">
+  <a href="/"><div class="text-xl font-semibold">Pablo García Celdrán</div></a>
   <nav class="flex items-center space-x-6">
-    <a href="/contactos" class="hover:text-gray-100">Contact</a>
-    <a href="/" class="hover:text-gray-100">Start</a>
+    <a href="/contactos" class="hover:text-gray-100 dark:hover:text-gray-200">Contact</a>
 
-    <div class="relative w-[60px] h-[26px]">
-      <input type="checkbox" id="theme-toggle" class="sr-only peer" />
-      <label for="theme-toggle"
-        class="block w-full h-full bg-[#d8dbe0] border-4 border-[#d8dbe0] rounded-full cursor-pointer peer-checked:bg-[#28292c] transition-all">
-      </label>
-      <div
-        class="absolute top-[5px] left-[5px] w-[15px] h-[15px] rounded-full transition-all peer-checked:translate-x-[30px]"
-        id="toggle-icon">
-      </div>
-    </div>
+    <button id="theme-toggle" class="p-2 bg-gray-700 rounded-md text-white hover:bg-gray-600 dark:bg-gray-400 dark:text-black dark:hover:bg-gray-300 transition">
+      🌙
+    </button>
   </nav>
 </header>
 
-<script src="../scripts/themeToggle.js"></script> 
+<script src="../scripts/themeToggle.js"></script>

@@ -1,36 +1,77 @@
 ---
 const posts = await Astro.glob('../pages/posts/*.md');
---- 
-
+---
 <div class="relative w-full posts-container">
   {posts.slice(0, 4).map((post, index) => (
     <section
-      class={`sticky top-0 h-screen flex flex-col justify-center px-8 sm:px-16 md:px-32 ${
-        index % 2 === 0 ? 'bg-[#333333]' : 'bg-[#726B6B]'
+      class={`sticky top-0 h-screen flex flex-col justify-center px-8 sm:px-16 md:px-32 transition-all duration-300 ${
+        index % 2 === 0 
+          ? 'bg-[#333333] dark:bg-[#444444]' 
+          : 'bg-[#726B6B] dark:bg-[#888888]'
       }`}
     >
-      <h2 class={`mt-10 text-2xl text-center sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 md:mb-10 ${
-        index % 2 === 0 ? 'text-[#B6AEAE]' : 'text-[#000000]'
+      <h2 class={`mt-10 text-3xl text-center sm:text-4xl md:text-5xl font-bold mb-8 ${
+        index % 2 === 0 
+          ? 'text-[#B6AEAE] dark:text-[#d4d4d4]' 
+          : 'text-[#000000] dark:text-[#222222]'
       }`}>
         {post.frontmatter.title}
       </h2>
 
       <div
-        class={`flex flex-col sm:flex-row justify-between items-center w-full ${
-          index % 2 === 0 ? 'sm:flex-row' : 'sm:flex-row-reverse'
+        class={`flex flex-col gap-8 sm:gap-12 md:gap-16 lg:gap-24 w-full items-center ${
+          index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
         }`}
       >
+        <a href={post.frontmatter.demo} target="_blank" rel="noopener noreferrer">
         <img
           src={post.frontmatter.image}
           alt={post.frontmatter.title}
-          class="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-[500px] lg:h-80 object-cover rounded-lg shadow-lg mb-6 sm:mb-0"
+          class="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[600px] lg:h-96 object-cover rounded-lg shadow-lg"
         />
-        
-        <p class={`text-base sm:text-lg md:text-xl max-w-full sm:max-w-2xl md:max-w-2xl leading-relaxed ${
-          index % 2 === 0 ? 'text-[#B6AEAE]' : 'text-[#000000]'
-        }`}>
-          {post.frontmatter.description}
-        </p>
+        </a>
+        <div class="text-center lg:text-left max-w-full sm:max-w-lg md:max-w-xl">
+          <p class={`text-lg sm:text-xl md:text-2xl lg:text-3xl ${
+            index % 2 === 0 
+              ? 'text-[#B6AEAE] dark:text-[#ffffff]' 
+              : 'text-[#000000] dark:text-[#222222]'
+          }`}>
+            {post.frontmatter.description}
+          </p>
+
+          {post.frontmatter.github && (
+            <div class="mt-6 flex items-center space-x-4">
+              <a
+                href={post.frontmatter.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-[#5f5f5f] text-black font-semibold py-3 px-6 rounded-lg text-lg transition hover:bg-[#cdcdcd] border-2 dark:bg-[#777777] dark:hover:bg-[#bbbbbb] dark:text-white"
+              >
+                Ir a GitHub →
+              </a>
+
+              
+              {post.frontmatter.technologies && (
+                <div class="flex space-x-3 mt-4">
+                  {post.frontmatter.technologies.map((tech, index) => (
+                    <a
+                      href={tech.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      key={index}
+                    >
+                      <img 
+                        src={tech.image} 
+                        alt={tech.name || 'Technology'} 
+                        class="w-14 h-14 md:w-16 md:h-16 transition-transform transform hover:scale-110"
+                      />
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+        </div>
       </div>
     </section>
   ))}
